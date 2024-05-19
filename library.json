@@ -1,0 +1,33 @@
+{
+  "name": "ESP_MultiWiFi",
+  "version": "1.0.0",
+  "keywords": "ESP8266, MultiWiFi, WiFi, Network, Connection, Arduino",
+  "description": "A library for ESP8266 that manages multiple WiFi networks, allowing automatic connection to the best available network based on signal strength.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gadaman-rm/ESP_MultiWiFi.git"
+  },
+  "authors": [
+    {
+      "name": "Mahdi Ghasemi",
+      "email": "giminotron5@gmail.com",
+      "url": "https://github.com/giminotron5",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gadaman-rm/ESP_MultiWiFi",
+  "frameworks": "arduino",
+  "platforms": [
+    "espressif8266"
+  ],
+  "examples": [
+    {
+      "name": "Basic MultiWiFi Example",
+      "base": "examples/Basic_MultiWiFi",
+      "files": [
+        "Basic_MultiWiFi.ino"
+      ]
+    }
+  ]
+}
