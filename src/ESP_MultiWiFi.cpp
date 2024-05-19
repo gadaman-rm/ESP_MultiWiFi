@@ -70,7 +70,7 @@ bool MultiWiFi::existsAP(const char *ssid)
 void MultiWiFi::clearAPlist() { _apList.clear(); }
 
 /**
-  Returns the SSID of an Access Point (AP) given its index.
+  Returns the SSID of the network at the specified index.
 
   @param index The index of the AP in the list.
   @return The SSID of the AP at the given index, or an empty string if the index is out of range.
@@ -82,7 +82,7 @@ const char *MultiWiFi::getSSID(uint8_t index)
 }
 
 /**
-  Returns the passphrase of an Access Point (AP) given its index.
+  Returns the passphrase of the network at the specified index.
 
   @param index The index of the AP in the list.
   @return The passphrase of the AP at the given index, or an empty string if the index is out of range.

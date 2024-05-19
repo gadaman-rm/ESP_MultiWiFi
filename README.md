@@ -1,4 +1,8 @@
-# ESP_MultiWiFi
+# ESP_MultiWiFi Library
+
+[![GitHub license](https://img.shields.io/github/license/gadaman-rm/ESP_MultiWiFi.svg)](https://github.com/gadaman-rm/ESP_MultiWiFi/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/gadaman-rm/ESP_MultiWiFi.svg)](https://github.com/gadaman-rm/ESP_MultiWiFi/releases/)
+[![GitHub issues](https://img.shields.io/github/issues/gadaman-rm/ESP_MultiWiFi.svg)](https://github.com/gadaman-rm/ESP_MultiWiFi/issues)
 
 ## Description
 
@@ -60,36 +64,42 @@ void loop()
 ## API
 ### Methods
 
-- `void addAP(const char* ssid, const char* passphrase);`
+- `void addAP(const char* ssid, const char* passphrase)`: Adds a new Access Point (AP) to the list.
+- `bool deleteAp(const char *ssid)`: Deletes an Access Point (AP) from the list.
+- `bool existsAP(const char *ssid)`: Checks if an Access Point (AP) exists in the list.
+- `void clearAPlist()`Clears the list of Access Points (APs).
 
-  Adds a known WiFi network to the list of networks.
+- `uint8_t getApCount()`:Returns the number of Access Points (APs) in the list.
+- `const char* getSSID(size_t index)`: Returns the SSID of the network at the specified index.
+- `const char* getPassphrase(size_t index);`: Returns the passphrase of the network at the specified index.
 
-- `void loop(uint32_t connectTimeoutMs = WIFI_CONNECT_TIMEOUT);`
-
-  Manages the WiFi connection process, should be called in the main loop of your sketch.
-
-- `size_t getAPCount() const;`
-
-  Returns the number of known WiFi networks added.
-
-- `const char* getSSID(size_t index) const;`
-
-  Returns the SSID of the network at the specified index.
-
-- `const char* getPassphrase(size_t index) const;`
-
-  Returns the passphrase of the network at the specified index.
+- `void loop(uint32_t connectTimeoutMs = WIFI_CONNECT_TIMEOUT)`: Manages the WiFi connection process, should be called in the main loop of your sketch.
 
 ## Debugging
 
-This library provides debug output to help with troubleshooting. Ensure you have a debug macro defined in your project to enable debug messages.
+This library provides debug output to help with troubleshooting. To enable debug messages, uncomment the following line in the library header file (`ESP_MultiWiFi.h`):
 
 ```cpp
-#define DEBUG_MW_LN(...) Serial.println(__VA_ARGS__)
-#define DEBUG_MW_F(...) Serial.printf(__VA_ARGS__)
-#define DEBUG_PRINT_LN(...) Serial.println(__VA_ARGS__)
-#define DEBUG_PRINT_F(...) Serial.printf(__VA_ARGS__)
+// #define ENABLE_MULTI_WIFI_DEBUG // Uncomment to enable debug output
 ```
+If debug mode is enabled, ensure that you configure the serial communication in the setup function:
+
+```cpp
+void setup()
+{
+  Serial.begin(115200);
+  // other setup code
+}
+
+```
+Once debug mode is enabled, you can use the following macros to handle the debug messages:
+
+- `DEBUG_MW_F(...)`: Print messages with the library prefix using `printf`.
+- `DEBUG_MW(...)`: Print messages with the library prefix using `print`.
+- `DEBUG_MW_LN(...)`: Print messages with the library prefix using `println`.
+- `DEBUG_PRINT_F(...)`: Print messages using `printf`.
+- `DEBUG_PRINT(...)`: Print messages using `print`.
+- `DEBUG_PRINT_LN(...)`: Print messages using `println`.
 
 ## License
 
