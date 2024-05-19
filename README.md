@@ -6,7 +6,9 @@
 
 ## Description
 
-`ESP_MultiWiFi` is a library for managing multiple WiFi connections on ESP8266 devices. This library automatically scans for available networks, sorts them based on signal strength, and attempts to connect to the strongest network available. If the connection fails, it moves to the next network in the list until a successful connection is established or all options are exhausted.
+`ESP_MultiWiFi` is a library for managing multiple WiFi connections on ESP8266 devices `Asynchronously`.
+
+This library automatically scans for available networks, sorts them based on signal strength, and attempts to connect to the strongest network available. If the connection fails, it moves to the next network in the list until a successful connection is established or all options are exhausted.
 
 ## Features
 
@@ -14,6 +16,7 @@
 - Sorts networks by signal strength.
 - Attempts to connect to known networks in order of strength.
 - Handles reconnection in case of disconnection.
+- Operates asynchronously, allowing code execution to continue without blocking.
 - Compatible with ESP8266.
 
 ## Installation
