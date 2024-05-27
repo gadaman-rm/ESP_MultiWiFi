@@ -6,7 +6,7 @@
 #include <ESP8266WiFi.h>
 
 /*---------------- Definitions ----------------*/
-#define ENABLE_MULTI_WIFI_DEBUG // Uncomment to enable debug output
+// #define ENABLE_MULTI_WIFI_DEBUG // Uncomment to enable debug output
 
 // Serial port definition
 #ifdef ENABLE_MULTI_WIFI_DEBUG
